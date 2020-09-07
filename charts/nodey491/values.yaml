@@ -10,6 +10,10 @@ image:
 # define environment variables here as a map of key: value
 env:
 
+# list of image pull secrets to use to pull images
+imagePullSecrets:
+  - knative-docker-user-pass
+
 # enable this flag to use knative serve to deploy the app
 knativeDeploy: false
 

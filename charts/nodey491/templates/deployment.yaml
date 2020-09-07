@@ -29,6 +29,10 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullSecrets:
+{{- range $pval := .Values.imagePullSecrets }}
+        - {{ quote $pval }}
+{{- end }}
         env:
 {{- range $pkey, $pval := .Values.env }}
         - name: {{ $pkey }}
