@@ -4,11 +4,11 @@ pipelineConfig:
     overrides:
       - name: container-build
         step: 
-          #sh: /kaniko/executor $KANIKO_FLAGS  --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION 
-          sh: /bin/sh -c "sleep 100000"
+          sh: /kaniko/executor $KANIKO_FLAGS  --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION 
+          #sh: /bin/sh -c "sleep 100000"
           name: container-build
-          image: 	gcr.io/jenkinsxio/builder-nodejs:2.1.142-761
-          #image: gcr.io/kaniko-project/executor
+          #image: 	gcr.io/jenkinsxio/builder-nodejs:2.1.142-761
+          image: gcr.io/kaniko-project/executor
           env:
           - name: NO_GOOGLE_APPLICATION_CREDENTIALS
             value: "true"
