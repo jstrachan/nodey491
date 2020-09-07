@@ -59,5 +59,6 @@ spec:
 {{- end }}
       imagePullSecrets:
 {{- range $pval := .Values.imagePullSecrets }}
-      - {{ quote $pval }}
+      - name: {{ quote $pval }}
+        namespace: {{ .Values.jxRequirements.cluster.namespace | default "jx" }}
 {{- end }}
