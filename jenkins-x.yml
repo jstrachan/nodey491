@@ -19,6 +19,7 @@ pipelineConfig:
           image: gcr.io/jenkinsxio/jx-cli:3.0.174
       - name: jx-preview
         step:
-          sh: jx preview --app $APP_NAME --dir ../..
+          sh: jx preview --app $APP_NAME
+          dir: /workspace/source
           name: jx-preview
           image: gcr.io/jenkinsxio/jx-cli:3.0.174
