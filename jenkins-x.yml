@@ -12,8 +12,3 @@ pipelineConfig:
             value: "true"
           - name: GOOGLE_APPLICATION_CREDENTIALS
             value: ""
-      - name: jx-preview
-        step:
-          sh: jx preview --app $APP_NAME --dir ../..
-          name: jx-preview
-          image: gcr.io/jenkinsxio/jx-cli:3.0.174
