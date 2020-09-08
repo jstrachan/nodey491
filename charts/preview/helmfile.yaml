@@ -1,0 +1,9 @@
+filepath: ""
+releases:
+- chart: ../nodey491
+  name: preview
+  namespace: jx-preview
+  values:
+  - values.yaml.gotmpl
+templates: {}
+missingFileHandler: ""
