@@ -1,3 +1,3 @@
 # node 
 
-Simple Hello World that listens on localhost:8080
+Simple Hello World which listens on localhost:8080
