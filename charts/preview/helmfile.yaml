@@ -16,4 +16,4 @@ releases:
       - --selector
       - "secret.jenkins-x.io/replica-source=true"
       - --to
-      - "{{.Environment.PREVIEW_NAMESPACE}}"
+      - {{ requiredEnv "PREVIEW_NAMESPACE" }}
