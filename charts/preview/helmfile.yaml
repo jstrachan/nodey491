@@ -1,8 +1,12 @@
 filepath: ""
 releases:
-- chart: ../nodey491
+- chart: ../{{ requiredEnv "APP_NAME" }}
   name: preview
-  namespace: jx-preview
+  verify: true
+  wait: true
+  createNamespace: true
+  namespace: {{ requiredEnv "PREVIEW_NAMESPACE" }}
+  historyMax: 5
   values:
   - values.yaml.gotmpl
 templates: {}
