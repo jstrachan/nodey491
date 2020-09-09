@@ -1,9 +1,9 @@
 releases:
-- chart: ../{{ requiredEnv "APP_NAME" }}
+- chart: '../{{ requiredEnv "APP_NAME" }}'
   name: preview
   wait: true
   createNamespace: true
-  namespace: {{ requiredEnv "PREVIEW_NAMESPACE" }}
+  namespace: '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
   values:
   - values.yaml.gotmpl
   hooks:
@@ -16,4 +16,4 @@ releases:
       - --selector
       - "secret.jenkins-x.io/replica-source=true"
       - --to
-      - {{ requiredEnv "PREVIEW_NAMESPACE" }}
+      - '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
