@@ -16,10 +16,10 @@ pipelineConfig:
         step:
           sh: echo "disabled"
           name: make-preview
-          image: gcr.io/jenkinsxio/jx-cli:3.0.182
+          image: gcr.io/jenkinsxio/jx-cli:3.0.184
       - name: jx-preview
         step:
           sh: jx preview create --app $APP_NAME
           dir: /workspace/source
           name: jx-preview
-          image: gcr.io/jenkinsxio/jx-cli:3.0.182
+          image: gcr.io/jenkinsxio/jx-cli:3.0.184
