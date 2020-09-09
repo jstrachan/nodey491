@@ -1,13 +1,10 @@
-filepath: ""
 releases:
 - chart: ../{{ requiredEnv "APP_NAME" }}
   name: preview
-  verify: true
   wait: true
   createNamespace: true
   namespace: {{ requiredEnv "PREVIEW_NAMESPACE" }}
-  historyMax: 5
+  #verify: true
+  #historyMax: 5
   values:
   - values.yaml.gotmpl
-templates: {}
-missingFileHandler: ""
