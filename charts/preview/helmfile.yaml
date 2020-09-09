@@ -1,7 +1,3 @@
-environments:
-  default:
-    values:
-    - jx-values.yaml
 releases:
 - chart: '../{{ requiredEnv "APP_NAME" }}'
   name: preview
@@ -10,6 +6,7 @@ releases:
   namespace: '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
   values:
   - values.yaml.gotmpl
+  - jx-values.yaml
   hooks:
   - events: ["presync"]
     showlogs: true
